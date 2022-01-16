@@ -8,5 +8,6 @@ export interface RentalDetailDto{
     fullName: string
     brandName: string
     rentalId:number
+    carId:number
 
 }

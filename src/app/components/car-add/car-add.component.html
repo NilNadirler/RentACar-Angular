@@ -1,0 +1,45 @@
+<div class="content">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="title">Add Car</h5>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="carAddForm">
+                    <div class="mb-3">
+                        <label for="brandName">Brand Name</label>
+                        <div class="form-group">
+                            <select id="brandId" formControlName="brandId" class="form-control">
+                            <option *ngFor="let item of brands" 
+                        [value]="item.brandId">{{item.brandName}}</option></select>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="modelYear">Model Year</label>
+                        <div class="form-group">
+                            <input type="text" id="modelYear" formControlName="modelYear" class="form-control" placeholder="Model Year" />
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="colorName">Color</label>
+                        <div class="form-group">
+                            <select id="colorId" formControlName="colorId" class="form-control">
+                            <option *ngFor="let item of colors" [value]="item.colorId">{{item.colorName}}</option>
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="unitPrice">Daily Price</label>
+                        <div class="form-group">
+                            <input type="text" id="dailyPrice" formControlName="dailyPrice" class="form-control" placeholder="Daily Price" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-fill btn-primary" (click)="add()">Add</button>
+            </div>
+        </div>
+    </div>
+</div>

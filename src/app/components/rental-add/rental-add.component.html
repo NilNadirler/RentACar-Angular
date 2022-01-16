@@ -1,0 +1,13 @@
+<div class="content">
+    <form [formGroup]="rentalAddForm">
+        <div class="mb-3">
+            <label for="rentDate" class="form-label">RentDate</label>
+            <input type="date" class="form-control" id="rentDate" formControlName="rentDate">
+        </div>
+        <div class="mb-3">
+            <label for="returnDate" class="form-label">Return Date</label>
+            <input type="date" class="form-control" id="returnDate" formControlName="returnDate">
+        </div>
+        <button (click)="add()" type="submit" class="btn btn-primary">Kirala</button>
+    </form>
+</div>

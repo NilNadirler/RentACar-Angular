@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-md-9">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div [class]="getCurrentImageClass(image)" *ngFor="let image of images">
+                    <img [src]="image.imagePath" style="height: 400px;" class="d-block w-100 img-responsive" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+        </div>
+        <hr>
+        <div class="container">
+            <div class="row justify-content-center">
+                <button class="btn btn-primary col-3 " routerLink="/rentals/rentACar/{{car.carId}}">Kirala</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{car.carId}}</li>
+            <li class="list-group-item">{{car.brandName}}</li>
+            <li class="list-group-item">{{car.colorName}}</li>
+            <li class="list-group-item">{{car.modelYear}}</li>
+            <li class="list-group-item">{{car.dailyPrice}}</li>
+            <li class="list-group-item">{{car.description}}</li>
+        </ul>
+    </div>
+</div>

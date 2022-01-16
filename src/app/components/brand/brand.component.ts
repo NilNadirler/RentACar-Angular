@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Brand } from 'src/app/models/brand';
-import { RentalDetailDto } from 'src/app/models/rentalDetailDto';
 import { BrandService } from 'src/app/Services/brand.service';
-import { RentalService } from 'src/app/Services/rental.service';
 
 @Component({
   selector: 'app-brand',
@@ -10,8 +8,9 @@ import { RentalService } from 'src/app/Services/rental.service';
   styleUrls: ['./brand.component.css']
 })
 export class BrandComponent implements OnInit {
-   
-  brands:Brand[]=[]
+  brandId: number = 0;
+  brands:Brand[]=[];
+  currentBrand:Brand;
   constructor(private brandServices:BrandService) { }
 
   ngOnInit(): void {
@@ -23,4 +22,24 @@ export class BrandComponent implements OnInit {
        this.brands=response.data
      })
   }
+  setCurrentBrand(brand:Brand){
+    this.currentBrand=brand;
+
+  }
+  getCurrentBrandClass(brand:Brand){
+    if(brand==this.currentBrand){
+      this.brandId=brand.brandId;
+      return "list-group-item list-group-item-action list-group-item-light active"
+    }
+    else return "list-group-item list-group-item-action list-group-item-light"
+  }
+  getAllBrandClass(){
+    if(!this.currentBrand){
+       return  "list-group-item list-group-item-action list-group-item-light active"
+    }
+    else{
+      return "list-group-item list-group-item-action list-group-item-light"
+    }
+  }
+ 
 }
